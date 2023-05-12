@@ -6,7 +6,7 @@ import com.example.booksManager.entity.ForumComment;
 import com.example.booksManager.exception.WebException;
 import com.example.booksManager.mapper.ForumCommentMapper;
 import com.example.booksManager.repository.ForumCommentRepository;
-import com.example.booksManager.service.BaseService;
+import com.example.booksManager.service.ForumCommentService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
@@ -15,7 +15,7 @@ import java.util.List;
 
 @Service
 @RequiredArgsConstructor
-public class ForumCommentService implements BaseService<ForumCommentResponseDto, ForumCommentRequestDto> {
+public class ForumCommentServiceImpl implements ForumCommentService {
     private final ForumCommentMapper forumCommentMapper;
     private final ForumCommentRepository forumCommentRepository;
 

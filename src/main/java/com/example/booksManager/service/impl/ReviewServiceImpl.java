@@ -6,7 +6,7 @@ import com.example.booksManager.entity.Review;
 import com.example.booksManager.exception.WebException;
 import com.example.booksManager.mapper.ReviewMapper;
 import com.example.booksManager.repository.ReviewRepository;
-import com.example.booksManager.service.BaseService;
+import com.example.booksManager.service.ReviewService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
@@ -15,7 +15,7 @@ import java.util.List;
 
 @Service
 @RequiredArgsConstructor
-public class ReviewService implements BaseService<ReviewResponseDto, ReviewRequestDto> {
+public class ReviewServiceImpl implements ReviewService {
     private final ReviewMapper reviewMapper;
     private final ReviewRepository reviewRepository;
 

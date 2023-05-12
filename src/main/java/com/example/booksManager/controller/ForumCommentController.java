@@ -2,7 +2,7 @@ package com.example.booksManager.controller;
 
 import com.example.booksManager.dto.forum.ForumCommentRequestDto;
 import com.example.booksManager.dto.forum.ForumCommentResponseDto;
-import com.example.booksManager.service.impl.ForumCommentService;
+import com.example.booksManager.service.ForumCommentService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

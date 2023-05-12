@@ -2,7 +2,7 @@ package com.example.booksManager.controller;
 
 import com.example.booksManager.dto.review.ReviewCommentRequestDto;
 import com.example.booksManager.dto.review.ReviewCommentResponseDto;
-import com.example.booksManager.service.impl.ReviewCommentService;
+import com.example.booksManager.service.ReviewCommentService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
