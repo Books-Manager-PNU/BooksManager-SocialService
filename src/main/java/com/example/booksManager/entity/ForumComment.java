@@ -18,9 +18,8 @@ public class ForumComment {
     @Column(name = "id")
     private Long id;
 
-    @ManyToOne
-    @JoinColumn(name = "forum_id", nullable = false)
-    private Forum forumId;
+    @Column(name = "forum_id", nullable = false)
+    private Long forumId;
 
     @Column(name = "comment_text", nullable = false)
     private String commentText;

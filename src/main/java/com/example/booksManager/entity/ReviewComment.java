@@ -18,9 +18,8 @@ public class ReviewComment {
     @Column(name = "id")
     private Long id;
 
-    @ManyToOne
-    @JoinColumn(name = "review_id", nullable = false)
-    private Review reviewId;
+    @Column(name = "review_id", nullable = false)
+    private Long reviewId;
 
     @Column(name = "comment_text", nullable = false)
     private String commentText;
