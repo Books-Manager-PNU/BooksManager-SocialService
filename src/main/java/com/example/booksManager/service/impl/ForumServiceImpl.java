@@ -20,9 +20,8 @@ public class ForumServiceImpl implements ForumService {
     private final ForumRepository forumRepository;
 
     @Override
-    public ForumResponseDto save(ForumRequestDto request, Long userId) {
+    public ForumResponseDto save(ForumRequestDto request) {
         Forum forum = forumMapper.toEntity(request);
-        forum.setUserId(userId);
         return forumMapper.toResponseDto(forumRepository.save(forum));
     }
 
@@ -41,10 +40,9 @@ public class ForumServiceImpl implements ForumService {
     }
 
     @Override
-    public ForumResponseDto update(Long id, ForumRequestDto request, Long userId) {
+    public ForumResponseDto update(Long id, ForumRequestDto request) {
         Forum forum = getExistingForumById(id);
         forumMapper.updateEntity(request, forum);
-        forum.setUserId(userId);
         forumRepository.save(forum);
         return forumMapper.toResponseDto(forum);
     }

@@ -20,9 +20,8 @@ public class ForumCommentServiceImpl implements ForumCommentService {
     private final ForumCommentRepository forumCommentRepository;
 
     @Override
-    public ForumCommentResponseDto save(ForumCommentRequestDto request, Long userId) {
+    public ForumCommentResponseDto save(ForumCommentRequestDto request) {
         ForumComment comment = forumCommentMapper.toEntity(request);
-        comment.setUserId(userId);
         return forumCommentMapper.toResponseDto(forumCommentRepository.save(comment));
     }
 
@@ -41,10 +40,9 @@ public class ForumCommentServiceImpl implements ForumCommentService {
     }
 
     @Override
-    public ForumCommentResponseDto update(Long id, ForumCommentRequestDto request, Long userId) {
+    public ForumCommentResponseDto update(Long id, ForumCommentRequestDto request) {
         ForumComment comment = getExistingForumById(id);
         forumCommentMapper.updateEntity(request, comment);
-        comment.setUserId(userId);
         forumCommentRepository.save(comment);
         return forumCommentMapper.toResponseDto(comment);
     }

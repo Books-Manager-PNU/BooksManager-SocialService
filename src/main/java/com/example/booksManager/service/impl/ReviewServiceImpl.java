@@ -20,9 +20,8 @@ public class ReviewServiceImpl implements ReviewService {
     private final ReviewRepository reviewRepository;
 
     @Override
-    public ReviewResponseDto save(ReviewRequestDto request, Long userId) {
+    public ReviewResponseDto save(ReviewRequestDto request) {
         Review review = reviewMapper.toEntity(request);
-        review.setUserId(userId);
         return reviewMapper.toResponseDto(reviewRepository.save(review));
     }
 
@@ -41,10 +40,9 @@ public class ReviewServiceImpl implements ReviewService {
     }
 
     @Override
-    public ReviewResponseDto update(Long id, ReviewRequestDto request, Long userId) {
+    public ReviewResponseDto update(Long id, ReviewRequestDto request) {
         Review review = getExistingForumById(id);
         reviewMapper.updateEntity(request, review);
-        review.setUserId(userId);
         reviewRepository.save(review);
         return reviewMapper.toResponseDto(review);
     }
